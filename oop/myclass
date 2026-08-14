@@ -1,0 +1,18 @@
+class Shape: # 共同的形狀爸爸
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+ 
+class Rectangle(Shape): # 矩形是一種形狀
+    def area(self):
+        return self.width * self.height 
+ 
+class Triangle(Shape): # 三角形也是一種形狀
+    def area(self): # ✨ 這裡甚至可以用同一個名字（多型）
+        return (self.width * self.height) / 2
+ 
+triangle = Triangle(5,6) # 建立 triangle 物件
+rectangle = Rectangle(5,6) # 建立 rectangle 物件
+print("矩形面積=",rectangle.area())  # 30
+triangle = Triangle(5,6) # 建立 triangle 物件
+print("三角形面積=",triangle.area()) # 15.0
